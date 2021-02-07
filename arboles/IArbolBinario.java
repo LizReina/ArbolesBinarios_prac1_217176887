@@ -32,6 +32,7 @@ public interface IArbolBinario<K extends Comparable<K>,V>{
     public List<K> recorridoPorNIvel();
     public List<K> recorridoPreOrden();
     public List<K> recorridoEnPostOrden();
+    public List<K> recorridoInOrden();
     
      public String mostrarArbol();
 
