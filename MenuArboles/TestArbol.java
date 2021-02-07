@@ -43,7 +43,7 @@ public class TestArbol {
               ArbolDeBusqueda.insertar(20, "cristian soza");
               ArbolDeBusqueda.insertar(7, "julio gonzales");
             //  ArbolDeBusqueda.insertar(23, "llanos");
-          /*    ArbolDeBusqueda.insertar(9, "mario");
+             ArbolDeBusqueda.insertar(9, "mario");
               ArbolDeBusqueda.insertar(11, "armando");
               ArbolDeBusqueda.insertar(25, "julia");
               ArbolDeBusqueda.insertar(4, "berta");
@@ -54,7 +54,7 @@ public class TestArbol {
               ArbolDeBusqueda.insertar(24, "valeria");
               ArbolDeBusqueda.insertar(50, "valeria");
               ArbolDeBusqueda.insertar(100, "valeria");
-              ArbolDeBusqueda.insertar(35, "valeria");*/
+              ArbolDeBusqueda.insertar(35, "valeria");
            
            System.out.println(ArbolDeBusqueda.mostrarArbol());
             
@@ -104,7 +104,7 @@ public class TestArbol {
               arbolNuevo.insertar(20, "cristian soza");
               arbolNuevo.insertar(7, "julio gonzales");
               arbolNuevo.insertar(23, "llanos");
-           /*   arbolNuevo.insertar(9, "mario");
+             arbolNuevo.insertar(9, "mario");
               arbolNuevo.insertar(11, "armando");
               arbolNuevo.insertar(25, "julia");
               arbolNuevo.insertar(4, "berta");
@@ -116,7 +116,7 @@ public class TestArbol {
               arbolNuevo.insertar(24, "valeria");
               arbolNuevo.insertar(50, "valeria");
               arbolNuevo.insertar(100, "valeria");
-              arbolNuevo.insertar(35, "valeria");*/
+              arbolNuevo.insertar(35, "valeria");
               
                  System.out.println("pregunta 7-> " + ((ArbolBusquedaBinaria)ArbolDeBusqueda).arbolSimilar((ArbolBusquedaBinaria) arbolNuevo));
            break; 
@@ -140,7 +140,7 @@ public class TestArbol {
               ArbolDeBusqueda.insertar(50, "valeria");
               ArbolDeBusqueda.insertar(100, "valeria");
               ArbolDeBusqueda.insertar(35, "valeria");
-             System.out.println("pregunta 8-> " + ((ArbolAVL)ArbolDeBusqueda).cantidadNodosAmbosHijos(ponerDato.nextInt()));
+             System.out.println("pregunta 8-> " + ((ArbolAVL)ArbolDeBusqueda).eliminar(ponerDato.nextInt()));
              break; 
             
             case 8:  
