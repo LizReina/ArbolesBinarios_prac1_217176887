@@ -42,7 +42,7 @@ public class TestArbol {
       
               ArbolDeBusqueda.insertar(20, "cristian soza");
               ArbolDeBusqueda.insertar(7, "julio gonzales");
-            //  ArbolDeBusqueda.insertar(23, "llanos");
+              ArbolDeBusqueda.insertar(23, "llanos");
              ArbolDeBusqueda.insertar(9, "mario");
               ArbolDeBusqueda.insertar(11, "armando");
               ArbolDeBusqueda.insertar(25, "julia");
