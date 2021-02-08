@@ -799,9 +799,9 @@ void recoridoPostOrdenRec(NodoBinario<K,V> nodoActual,List<K> recorrido){
      si el árbol binario es similar al árbol binario recibido como parámetro, falso en caso contrario. */
       
   public boolean arbolSimilar(ArbolBusquedaBinaria nuevoArbol){
-    /*  if(altura() != nuevoArbol.altura()){
+     if(altura() != nuevoArbol.altura()){
         return false;
-      }*/
+      }
       return arbolSimilar(this.raiz,nuevoArbol.raiz);
   }
   
