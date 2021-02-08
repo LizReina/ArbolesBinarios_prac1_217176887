@@ -573,10 +573,8 @@ void recoridoPostOrdenRec(NodoBinario<K,V> nodoActual,List<K> recorrido){
    }
    
     @Override
-    public int nivel() {
-        //nivel;
-        
-      return 0;
+    public int nivel() { 
+      return altura-1;
     }
 
     
