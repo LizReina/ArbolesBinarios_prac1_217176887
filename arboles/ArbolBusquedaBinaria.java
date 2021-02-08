@@ -47,8 +47,13 @@ public class ArbolBusquedaBinaria<K extends Comparable<K>,V> implements IArbolBi
         }
     }
    
-    public NodoBinario<K,V> recostruirConPreOrden(List<K> claveInOrden,List<V> valorInOrden,
+     public NodoBinario<K,V> recostruirConPreOrden(List<K> claveInOrden,List<V> valorInOrden,
                                         List<K> claveEnPreOrden,List<V> valorEnPreOrden){
+        if(claveInOrden.isEmpty()){
+            return (NodoBinario<K,V>)NodoBinario.nodoVacio();
+        }
+        
+        
         int posicionClavePadrePreOrden=0;
         K clavePadre = claveEnPreOrden.get(posicionClavePadrePreOrden);
         V valorPadre = valorEnPreOrden.get(posicionClavePadrePreOrden);
@@ -57,8 +62,8 @@ public class ArbolBusquedaBinaria<K extends Comparable<K>,V> implements IArbolBi
         //para armar la rama izquierda
           List<K> claveInOrdenPorIzquierda=claveInOrden.subList(0,posicionClavePadreInOrden);
           List<V> valorInOrdenPorIzquierda=valorInOrden.subList(0,posicionClavePadreInOrden);
-          List<K> claveEnPreOrdenPorIzquierda=claveInOrden.subList(0,posicionClavePadreInOrden);
-          List<V> valorEnPreOrdenPorIzquierda=valorInOrden.subList(0,posicionClavePadreInOrden);
+          List<K> claveEnPreOrdenPorIzquierda=claveEnPreOrden.subList(1,posicionClavePadreInOrden+1);
+          List<V> valorEnPreOrdenPorIzquierda=valorEnPreOrden.subList(1,posicionClavePadreInOrden+1);
           NodoBinario<K,V> hijoIzquierdo=recostruirConPreOrden(claveInOrdenPorIzquierda,valorInOrdenPorIzquierda,claveEnPreOrdenPorIzquierda,
            valorEnPreOrdenPorIzquierda);
           
@@ -66,8 +71,8 @@ public class ArbolBusquedaBinaria<K extends Comparable<K>,V> implements IArbolBi
         //para armar la rama derecha
           List<K> claveInOrdenPorDerecha=claveInOrden.subList(posicionClavePadreInOrden+1,claveInOrden.size());
           List<V> valorInOrdenPorDerecha=valorInOrden.subList(posicionClavePadreInOrden+1,claveInOrden.size());
-          List<K> claveEnPreOrdenPorDerecha=claveInOrden.subList(posicionClavePadreInOrden+1,claveEnPreOrden.size());
-          List<V> valorEnPreOrdenPorDerecha=valorInOrden.subList(posicionClavePadreInOrden+1,claveEnPreOrden.size());
+          List<K> claveEnPreOrdenPorDerecha=claveEnPreOrden.subList(posicionClavePadreInOrden+1,claveEnPreOrden.size());
+          List<V> valorEnPreOrdenPorDerecha=valorEnPreOrden.subList(posicionClavePadreInOrden+1,claveEnPreOrden.size());
           NodoBinario<K,V> hijoDerecho=recostruirConPreOrden(claveInOrdenPorDerecha,valorInOrdenPorDerecha,claveEnPreOrdenPorDerecha,
            valorEnPreOrdenPorDerecha);
           
@@ -80,6 +85,10 @@ public class ArbolBusquedaBinaria<K extends Comparable<K>,V> implements IArbolBi
     }
     
     public NodoBinario<K,V>  recostruirConPostOrden(List<K> claveInOrden,List<V> valorInOrden,List<K>claveEnPostOrden,List<V> valorEnPostOrden){
+        if(claveInOrden.isEmpty()){
+            return (NodoBinario<K,V>)NodoBinario.nodoVacio();
+        }
+        
         int posicionClavePadrePreOrden=claveEnPostOrden.size();
         K clavePadre = claveEnPostOrden.get(posicionClavePadrePreOrden);
         V valorPadre = valorEnPostOrden.get(posicionClavePadrePreOrden);
@@ -88,8 +97,8 @@ public class ArbolBusquedaBinaria<K extends Comparable<K>,V> implements IArbolBi
         //para armar la rama izquierda
           List<K> claveInOrdenPorIzquierda=claveInOrden.subList(0,posicionClavePadreInOrden);
           List<V> valorInOrdenPorIzquierda=valorInOrden.subList(0,posicionClavePadreInOrden);
-          List<K> claveEnPostOrdenPorIzquierda=claveInOrden.subList(0,posicionClavePadreInOrden);
-          List<V> valorEnPostOrdenPorIzquierda=valorInOrden.subList(0,posicionClavePadreInOrden);
+          List<K> claveEnPostOrdenPorIzquierda=claveEnPostOrden.subList(0,posicionClavePadreInOrden);
+          List<V> valorEnPostOrdenPorIzquierda=valorEnPostOrden.subList(0,posicionClavePadreInOrden);
           NodoBinario<K,V> hijoIzquierdo=recostruirConPostOrden(claveInOrdenPorIzquierda,valorInOrdenPorIzquierda,claveEnPostOrdenPorIzquierda,
            valorEnPostOrdenPorIzquierda);
           
@@ -97,10 +106,10 @@ public class ArbolBusquedaBinaria<K extends Comparable<K>,V> implements IArbolBi
         //para armar la rama derecha
           List<K> claveInOrdenPorDerecha=claveInOrden.subList(posicionClavePadreInOrden+1,claveInOrden.size());
           List<V> valorInOrdenPorDerecha=valorInOrden.subList(posicionClavePadreInOrden+1,claveInOrden.size());
-          List<K> clavePostPreOrdenPorDerecha=claveInOrden.subList(posicionClavePadreInOrden+1,claveEnPostOrden.size());
-          List<V> valorPostPreOrdenPorDerecha=valorInOrden.subList(posicionClavePadreInOrden+1,claveEnPostOrden.size());
-          NodoBinario<K,V> hijoDerecho=recostruirConPostOrden(claveInOrdenPorDerecha,valorInOrdenPorDerecha,clavePostPreOrdenPorDerecha,
-           valorPostPreOrdenPorDerecha);
+          List<K> clavePostOrdenPorDerecha=claveEnPostOrden.subList(posicionClavePadreInOrden+1,claveEnPostOrden.size());
+          List<V> valorPostOrdenPorDerecha=valorEnPostOrden.subList(posicionClavePadreInOrden+1,claveEnPostOrden.size());
+          NodoBinario<K,V> hijoDerecho=recostruirConPostOrden(claveInOrdenPorDerecha,valorInOrdenPorDerecha,clavePostOrdenPorDerecha,
+           valorPostOrdenPorDerecha);
           
         //armando el nodoActual
         NodoBinario<K,V> nodoActual=new NodoBinario<>(clavePadre,valorPadre);
